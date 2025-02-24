@@ -6,6 +6,7 @@ function Header() {
     const router = useRouter();
     const [search, setSearch] = useState("");
     const handleChange = (e) => {
+        console.log(e.target.value);
         setSearch(e.target.value);
     }
 

@@ -13,14 +13,16 @@ function SearchPage() {
 
     const fetchCharacter = async () => {
         try {
+            setLoading(true)
             const response = await fetch(`https://dragonball-api.com/api/characters/${params.search}`)
             const dgb = await response.json()
-            console.log(dgb)
-            //setCharacter(dgb)
+            //console.log(dgb)
+            setCharacter(dgb)
+            setLoading(false)
         } catch (error) {
             console.log(error)
         }
-        setLoading(false)
+       
     }
 
     useEffect(() => {        
